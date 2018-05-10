@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         
         //Collections Easy
         print("Collections Easy 1")
-        print("Remove all elements (should be empty): \(remove(elements: arrayOfIntegers))")
+        print("Remove all elements (should be empty): \(removeAll(elements: arrayOfIntegers))")
         
         print("Collections Easy 2")
         print("Merge two arrays: \(mergeArrays(firsArray1, secondArray1))")
@@ -127,8 +127,9 @@ class ViewController: UIViewController {
     // 1. Создать массив со значениями типа Int. Выполнить удаление всех элементов массива.
     
     var arrayOfIntegers = [10, 20, 30, 40]
-    func remove(elements: [Int]) {
-        arrayOfIntegers.removeAll()
+    func removeAll(elements: [Int]) {
+        var elementsCopy = elements
+        elementsCopy.removeAll()
     }
     
     // 2. Создать 2 массива со значениями типа  Int . Сделать соединение данных массивов. Результат вывести в консоль.
