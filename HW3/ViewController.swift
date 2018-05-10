@@ -37,10 +37,10 @@ class ViewController: UIViewController {
         
         //Collections Easy
         print("Collections Easy 1")
-        print("Remove all elements (should be empty): \(arrayOfIntegers.removeAll())")
+        print("Remove all elements (should be empty): \(remove(elements: arrayOfIntegers))")
         
         print("Collections Easy 2")
-        print("Combine two arrays: \(firsArray1 + secondArray1)")
+        print("Merge two arrays: \(mergeArrays(firsArray1, secondArray1))")
         
         print("Collections Easy 3")
         let yourFavorite = ["Color", "Book", "Movie", "Animal", "Food", "Drink", "Music"]
@@ -127,11 +127,17 @@ class ViewController: UIViewController {
     // 1. Создать массив со значениями типа Int. Выполнить удаление всех элементов массива.
     
     var arrayOfIntegers = [10, 20, 30, 40]
+    func remove(elements: [Int]) {
+        arrayOfIntegers.removeAll()
+    }
     
     // 2. Создать 2 массива со значениями типа  Int . Сделать соединение данных массивов. Результат вывести в консоль.
     
     var firsArray1 = [100, 200, 300, 400]
     var secondArray1 = [500, 600, 700, 800]
+    func mergeArrays(_ array1: [Int], _ array2: [Int]) -> [Int] {
+        return array1 + array2
+    }
     
     // 3. Создать массив с любыми значениями типа строка(во viewDidLoad()). Создать метод который будет принимать как аргумент массив. Метод должен выводить в консоль элементы массива (по одному в одной строке)
     
@@ -140,37 +146,35 @@ class ViewController: UIViewController {
             print(someWord)
         }
     }
-}
 
 
-// 4. Создать массив с любыми значениями типа строка. Создать метод который будет принимать как аргумент массив. Метод должен возвращать массив который состоит из первого и последнего элемента массива, который был параметром
 
-func iLove(theseColors: [String]) -> [String] {
-    for _ in theseColors {
-        return [theseColors.first!, theseColors.last!]
+    // 4. Создать массив с любыми значениями типа строка. Создать метод который будет принимать как аргумент массив. Метод должен возвращать массив который состоит из первого и последнего элемента массива, который был параметром
+
+    func iLove(theseColors: [String]) -> [String] {
+            return [theseColors.first!, theseColors.last!]
     }
-    return []
-}
 
-// 5. Создать словарь в котором ключ будет Строкой а значение Целым. Например ключ - имя, значение - возраст. Должно быть 3 элемента (3 пары). Добавить в данный словарь еще 2 новых элемента.
+    // 5. Создать словарь в котором ключ будет Строкой а значение Целым. Например ключ - имя, значение - возраст. Должно быть 3 элемента (3 пары). Добавить в данный словарь еще 2 новых элемента.
 
-var usersNames = ["Ann": 27,
-                  "Vova": 27,
-                  "Alex": 35]
+    var usersNames = ["Ann": 27,
+                      "Vova": 27,
+                      "Alex": 35]
 
 
-// 6. Создать словарь в котором ключ будет Строкой а значение Целым. Например ключ - имя, значение - возраст. Должно быть 3 элемента (3 пары). Создать метод который будет иметь 2 параметра: словарь (типа “Строка : Целое”) и ключ типа Строка. Данный метод должен удалить из полученного (как первый аргумент) словаря элемент ключ которого был передан (как второй аргумент).
-//Например: передаваемый словарь будет такой:
-//["Max": 1, "Dasha": 2, "Sergey": 3]
-//И если передать второй аргумент  "Sergey" , то метод должен удалить элемент из передаваемого массива с ключом  "Sergey" .
+    // 6. Создать словарь в котором ключ будет Строкой а значение Целым. Например ключ - имя, значение - возраст. Должно быть 3 элемента (3 пары). Создать метод который будет иметь 2 параметра: словарь (типа “Строка : Целое”) и ключ типа Строка. Данный метод должен удалить из полученного (как первый аргумент) словаря элемент ключ которого был передан (как второй аргумент).
+    //Например: передаваемый словарь будет такой:
+    //["Max": 1, "Dasha": 2, "Sergey": 3]
+    //И если передать второй аргумент  "Sergey" , то метод должен удалить элемент из передаваемого массива с ключом  "Sergey" .
 
-let astrologicalSigns = ["Aries": 1,
-                         "Taurus": 2,
-                         "Gemini": 3
-]
+    let astrologicalSigns = ["Aries": 1,
+                             "Taurus": 2,
+                             "Gemini": 3
+    ]
 
-func firsThree(dict: [String: Int], key: String) -> [String: Int] {
-    var mutatedDict = dict
-    mutatedDict.removeValue(forKey: key)
-    return mutatedDict
+    func firsThree(dict: [String: Int], key: String) -> [String: Int] {
+        var mutatedDict = dict
+        mutatedDict.removeValue(forKey: key)
+        return mutatedDict
+    }
 }
